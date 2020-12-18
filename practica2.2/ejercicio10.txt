@@ -1,0 +1,5 @@
+¿Qué sucede cuando se borra uno de los enlaces rígidos? ¿Qué sucede si se borra uno de los enlaces simbólicos? ¿Y si se borra el fichero original?
+
+Cuando se borra un enlace rigido no afecta al original ya que son dos archivos diferentes que apuntan al mismo i-nodo. 
+Si se borra un enlace simbólico se podrá acceder a través del original.
+Si se borra el fichero original que tiene un enlace rigido se puede acceder a ese archivo a través del enlace. En el caso de que tenga un simbólico no volveremos a tener más acceso a él. 
