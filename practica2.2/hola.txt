@@ -1,2 +1,1 @@
-Ha sido redirigido a  hola.txt
-852
+Hola mundo
