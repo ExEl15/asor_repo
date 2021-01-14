@@ -1,0 +1,2 @@
+ps -e - Muestra todos los procesos de forma extendida 
+ps aux Muestra los procesos del sistema, incluyendo el identificador del proceso, el identificador del grupo de procesos, el identificador de sesión, el estado y la línea de comandos.
