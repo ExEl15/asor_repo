@@ -1,0 +1,2 @@
+Solo se imprime en el caso de system porque excec cambia la imagen del proceso actual por una nueva. Por lo que lo que aparece a continuación no se ejecuta. 
+
