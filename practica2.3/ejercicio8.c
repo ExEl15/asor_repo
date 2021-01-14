@@ -3,6 +3,10 @@
 #include <unistd.h>
 #include <sys/time.h>
 #include <sys/resource.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 
 void imprimir(){
 		printf("Id del proceso: %i\n", getpid());
@@ -24,7 +28,7 @@ void imprimir(){
 
 
 }
-int main(){
+int main(int argc, char* argv[]){
 	
 	pid_t id = fork();
 
@@ -41,8 +45,22 @@ int main(){
 			perror("Error: cambiar directorio trabajo");
 		}
 		printf("[Hijo]");	
+		//imprimir();
+		int fd = open("/tmp/daemon.out",O_CREAT|O_RDWR,0777);
+		int er = open("/tmp/daemon.err",O_CREAT|O_RDWR, 0777);
+		int null = open("/dev/null",O_CREAT|O_RDWR,0777);
+		dup2(fd,2);
+		dup2(er,1);
+		dup2(null,0);
+
+		//Exec
+		if(argc > 1){
+	       		execvp(argv[1], argv+1); //Si esto se ha ejecutado lo de abajo no se ejecuta
+                	perror("Error exec");
+        	}
+
 		imprimir();
-		sleep(3);	
+		//sleep(3);	
 	break;
 	default:
 		printf("[Padre]");
