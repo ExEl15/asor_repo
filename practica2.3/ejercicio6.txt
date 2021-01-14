@@ -1,0 +1,2 @@
+Si el padre muere antes que el hijo, el proceso hijo queda huérfano y el proceso padre pasa a ser la shell
+Si el hijo muere antes que el padre el proceso queda en un estado de "Defunct"
