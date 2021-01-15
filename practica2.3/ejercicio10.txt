@@ -1,0 +1,12 @@
+kill -s [Signal] pid
+SIGHUP
+Termina la ejecución y aparece Hangup
+SIGINT 
+Solo termina la ejecucion
+SIGQUIT
+Termina ejecución y aparece Quit (core dumped)
+SIGILL
+Termina ejecución y aparece Illegal instruction (core dumped)
+SIGTRAP
+Termina ejecución y aparece Trace/breakpoint trap (core dumped)
+
