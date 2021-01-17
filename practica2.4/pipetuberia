@@ -1,0 +1,15 @@
+  PID TTY          TIME CMD
+ 3080 pts/0    00:00:00 ejercicio5
+ 3090 pts/1    00:00:00 ps
+ 5558 pts/0    00:00:00 sudo
+ 5559 pts/0    00:00:00 su
+ 5562 pts/0    00:00:03 bash
+ 6483 pts/1    00:00:00 sudo
+ 6484 pts/1    00:00:00 su
+ 6487 pts/1    00:00:00 bash
+ 6656 pts/1    00:00:00 bash
+10316 pts/1    00:00:01 bash
+23531 pts/2    00:00:00 sudo
+23532 pts/2    00:00:00 su
+23535 pts/2    00:00:00 bash
+30738 pts/0    00:00:00 wc
