@@ -24,9 +24,9 @@ int main(int argc, char* argv[]){
 	filtro.ai_family = AF_UNSPEC; //IPv4 y IPv6
         filtro.ai_flags = AI_PASSIVE;
         filtro.ai_protocol = 0; //Cualquier protocolo
-	filtro.ai_socktype = 0; 
-	filtro.ai_next = NULL;
-	filtro.ai_addr=NULL;
+	filtro.ai_socktype = SOCK_DGRAM; 
+	//filtro.ai_next = NULL;
+	//filtro.ai_addr=NULL;
 	//Mostrar IP numérica, la familia de protocolos y tipo de socket
 	
 	if(getaddrinfo(argv[1], argv[2], &filtro, &info)!= 0){
@@ -48,7 +48,7 @@ int main(int argc, char* argv[]){
 	char buf[2];
   	char host[NI_MAXHOST];
  	char serv[NI_MAXSERV];
-	while (1) {
+	while (buf[0] != 'q') {
 		size_t c = recvfrom(sd, buf, 2, 0, (struct sockaddr *) &client_addr, &client_addrlen);
  		buf[1] = '\0';
   		getnameinfo((struct sockaddr *) &client_addr, client_addrlen, host, NI_MAXHOST,serv, NI_MAXSERV, NI_NUMERICHOST|NI_NUMERICSERV);
@@ -70,10 +70,6 @@ int main(int argc, char* argv[]){
       			stringT[size] = '\0';
 		      	sendto(sd, stringT, size, 0, (struct sockaddr *) &client_addr, client_addrlen);
 		break;
-		case 'q':;
-			printf("Salimos...");
-			exit(0);
-		break;
 		default:;
 			printf("Comando no reconocido");
 		break;
@@ -81,6 +77,6 @@ int main(int argc, char* argv[]){
     
 }
 
-
+printf("Saliendo...");
 return 0;
 } 
